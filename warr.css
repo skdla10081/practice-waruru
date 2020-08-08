@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=VT323&display=swap');
+
+body {
+    font-family: 'VT323';
+    padding: 0;
+    margin: 0;
+}
+
+.game-wrapper {
+    position: relative;
+}
+
+.background-img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    overflow: hidden;
+    height: 650px;
+}
+
+.characters {
+    position: absolute;
+    display: flex;
+    top: 350px;
+    width: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1 {
+    font-weight: 400;
+    color: blueviolet;
+    font-size: 80px;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 15px;
+}
+
+.characters-stat {
+    display: flex;
+    font-size: 30px;
+}
+
+.characters-stat h3 {
+    margin: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 50px;
+}
+
+#mold-atk{
+    margin-right: 10px;
+}
+
+#my-atk{
+    margin-right: 10px;
+}
+
+.propic {
+    width: 200px;
+}
+
+#mold {
+    margin-right: auto;
+}
+
+#mold-attacked {
+    margin-right: auto;
+}
+
+.mold-hit {
+    animation: mold-hit 1s;
+}
+
+@keyframes mold-hit {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(-25px);
+    }
+}
+
+.jumping {
+    animation: jumping 1s Infinite linear;
+}
+
+@keyframes jumping {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.mold-stat {
+    margin-right: auto;
+}
+
+.result{
+    display: flex;
+    margin-top: 30px;
+    color: red;
+}
+
+.damage-result{
+    display: block;
+    font-size: 90px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#mold-damage{
+    margin-right: auto;
+}
+
+#attack-block{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    position: absolute;
+    top: 440px;
+    left: 50vw;
+}
+
+.attack-mold{
+    animation: attack-animation 1s infinite linear;
+    animation-iteration-count: 2;
+}
+
+.attack-me{
+    animation: attack-animation 1s infinite linear;
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+}
+
+@keyframes attack-animation{
+    0%{
+        transform: translateX(-20vh);
+    }
+    100%{
+        transform: translateX(20vh);
+    }
+}
+
+#attack {
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: blueviolet;
+    border: none;
+    padding: 10px 40px;
+    color: white;
+    font-size: 30px;
+    font-family: 'VT323';
+}
+
+#attack:hover {
+    background-color: blue;
+}
+
+#attack:disabled {
+    background-color: gray;
+}
+.display-none{
+    opacity: 0;
+}
