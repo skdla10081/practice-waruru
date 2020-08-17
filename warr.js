@@ -39,16 +39,11 @@ mold.DEFElement.textContent = 'DEF : ' + mold.DEF;
 
 //animation
 var attack_block = document.getElementById('attack-block');
-
 var attackbtn = document.getElementById('attack');
 
 //animation-setting
 my.attackedMotion.classList.add('display-none');
 mold.attackedMotion.classList.add('display-none');
-
-// var mold_damage = document.getElementById('mold-damage')
-// var me_damage = document.getElementById('me-damage')
-
 
 function attack(attacker, defender) {
     defender.defendvalue = defendvalue(defender);
@@ -92,14 +87,15 @@ function turn(attacker, defender) {
     attack_block.classList.add('display-none');
 
     defender.damageValue.textContent = '-' + Math.max(0, attacker.ATK - defender.defendvalue);
-    //남은 HP 반영
     defender.HPElement.textContent = 'HP : ' + defender.HP;
 }
 
 function waiting_attack_animation(attacker, defender) {
-    attacker.damageValue.textContent = ' ';
-    defender.character.classList.remove('jumping');
-    attacker.character.classList.add('jumping');
+    setTimeout(function () {
+        attacker.damageValue.textContent = ' ';
+        defender.character.classList.remove('jumping');
+        attacker.character.classList.add('jumping');
+    }, 500);
 }
 
 function block_attack_animation(attacker) {
@@ -123,20 +119,17 @@ attackbtn.addEventListener('click', function (e) {
         if (mold.HP < 1) {
             gameEnd(my);
         } else {
+            waiting_attack_animation(mold, my)
             setTimeout(function () {
-                waiting_attack_animation(mold, my)
                 block_attack_animation(mold);
                 setTimeout(function () {
                     turn(mold, my);
                     if (my.HP < 1) {
                         gameEnd(mold);
                     } else {
-                        setTimeout(function () {
-                            waiting_attack_animation(my, mold)
-                            //attackbtn.disabled = false;
-                        }, 500);
+                        waiting_attack_animation(my, mold)
+                        attackbtn.disabled = false;
                     }
-                    attackbtn.disabled = false;
                 }, 2000);
             }, 500);
         }
