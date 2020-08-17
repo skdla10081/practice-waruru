@@ -145,7 +145,7 @@ h1 {
     animation-iteration-count: 2;
 }
 
-.attack-me{
+.attack-my{
     animation: attack-animation 1s infinite linear;
     animation-iteration-count: 2;
     animation-direction: reverse;
