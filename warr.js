@@ -33,6 +33,19 @@ var mold = {
     damageValue: document.getElementById('mold-damage'),
 }
 
+
+// var hp_barElement= document.getElementById('hp-block-mold')
+// var hp_block= hp_barElement.createElement('div');
+// hp_barElement.append(hp_block);
+// hp_block.classList.add('hp-block')
+
+
+
+//================
+
+
+
+
 mold.ATKElement.textContent = 'ATK : ' + mold.ATK;
 mold.DEFElement.textContent = 'DEF : ' + mold.DEF;
 
